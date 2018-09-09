@@ -1,15 +1,15 @@
 ﻿<div ng-init="get()" style="width: 50%; min-width: 500px; margin: 0 auto;">
     <h1>Deudor</h1>
 
-    <form  ng-submit="save()"  name="userForm">      
+    <form  ng-submit="debtorForm.$valid && save()"  name="userForm">      
+       
         <div layout="row">
 
             <md-input-container class="md-block" flex-gt-sm="">
                 <label>Nombre</label>
                 <input md-maxlength="30" required="" name="name" ng-model="debtor.Name">
 
-                <div class="hint" ng-if="showHints">Nombre del deudor</div>
-                <div ng-messages="userForm.name.$error" ng-if="!showHints">
+                <div ng-messages="userForm.name.$error" ng-show="userForm.name.$error">
                     <div ng-message="required">Nombre es requerido.</div>
                 </div>
             </md-input-container>
@@ -19,9 +19,7 @@
                 <label>Email</label>
                 <input name="email" ng-model="debtor.Email" required="" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/">
 
-                <div class="hint" ng-show="showHints">minombre@hotmail.com</div>
-
-                <div ng-messages="userForm.email.$error" ng-hide="showHints">
+                <div ng-messages="userForm.email.$error" ng-show="userForm.email.$error">
                     <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
                         Your email must be between 10 and 100 characters long and look like an e-mail address.
                     </div>
@@ -31,11 +29,11 @@
         <div layout="row">
             <md-input-container class="md-block" flex-gt-sm="">
                 <label>Phone Number</label>
-                <input name="phone" ng-model="debtor.Phone" ng-pattern="/^[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}$/">
+                <input name="Phone" ng-model="debtor.Phone" ng-pattern="/^[(][0-9]{3}[)] [0-9]{3}-[0-9]{4}$/">
 
                 <div class="hint" ng-show="showHints">(###) ###-####</div>
 
-                <div ng-messages="userForm.phone.$error" ng-hide="showHints">
+                <div ng-messages="userForm.Phone.$error" ng-show="userForm.Phone.$error">
                     <div ng-message="pattern">(###) ###-#### - Please enter a valid phone number.</div>
                 </div>
             </md-input-container>
