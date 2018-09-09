@@ -1,0 +1,36 @@
+﻿<div layout="row">
+    <md-toolbar-filler layout="" layout-align="center center">
+        <i class="material-icons">
+            work
+        </i>
+    </md-toolbar-filler>
+    <div>
+        <h2 class="md-toolbar-tools">Crédito</h2>
+        <md-menu-bar>
+            <md-menu>
+                <button ng-click="$mdMenu.open()">
+                    Deudor
+                </button>
+                <md-menu-content>
+                    <md-menu-item>
+                        <md-button ng-click="ctrl.goTo('/')">
+                            <i class="material-icons">
+                                format_list_bulleted
+                            </i>
+                            Mostras lista
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-divider></md-menu-divider>
+                    <md-menu-item>                        
+                        <md-button ng-click="ctrl.goTo('/create')" >
+                            <i class="material-icons">
+                                add
+                            </i>
+                            Crear
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </md-menu-bar>
+    </div>
+</div>

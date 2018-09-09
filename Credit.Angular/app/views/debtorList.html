@@ -1,0 +1,31 @@
+﻿<div ng-init="getDeptors()">
+    <h1>Lista de deudores</h1>
+    <md-list>
+            
+        <md-list-item class="md-2-line" ng-repeat="debtor in debtors">
+            <span class="md-primary  md-icon-button">
+                <i class="icon-avatar material-icons">
+                    account_circle
+                </i>
+            </span>
+            
+            <div class="md-list-item-text" ng-class="{'md-offset': true }">
+                <h3> {{debtor.Id}} - {{debtor.Name}} </h3>
+                <p> {{ debtor.Email }} </p>
+                <p> {{ debtor.Phone }} </p>
+            </div>
+            <md-button class="md-secundary md-icon-button" ng-click="ctrl.goTo('edit/'+debtor.Id)" aria-label="edit">
+                <i class="material-icons">
+                    edit
+                </i>
+            </md-button>
+            <md-button class="md-secundary md-icon-button" ng-click="delete(debtor)" aria-label="clear">
+                <i class="material-icons">
+                    clear
+                </i>
+            </md-button>
+        </md-list-item>
+    </md-list>
+        
+</div>
+
